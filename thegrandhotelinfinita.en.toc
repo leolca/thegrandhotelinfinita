@@ -1,0 +1,5 @@
+\babel@toc {nil}{}\relax 
+\contentsline {chapter}{\numberline {1}The Paradox and the Disappearing}{7}{chapter.1}%
+\contentsline {chapter}{\numberline {2}The Mystery}{11}{chapter.2}%
+\contentsline {chapter}{\numberline {3}The Clues}{17}{chapter.3}%
+\contentsline {chapter}{\numberline {4}The Finding}{27}{chapter.4}%

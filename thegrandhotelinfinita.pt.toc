@@ -1,0 +1,5 @@
+\babel@toc {portuguese}{}\relax 
+\contentsline {chapter}{\numberline {1}O Paradoxo e o Desaparecimento}{7}{chapter.1}%
+\contentsline {chapter}{\numberline {2}O Mistério}{12}{chapter.2}%
+\contentsline {chapter}{\numberline {3}As Pistas}{18}{chapter.3}%
+\contentsline {chapter}{\numberline {4}O Encontro}{27}{chapter.4}%

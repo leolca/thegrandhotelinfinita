@@ -1,0 +1,17 @@
+O paradoxo que Henrietta e Bernard tentaram resolver é uma ideia do famoso matemático David Hilbert. Ele propôs um experimento mental: como um hotel infinito, com todos os quartos ocupados, pode acomodar um novo hóspede? A solução dele era simples: mude o hóspede do quarto $n$ para o quarto $n+1$, o que libera o quarto 1 para o novo hóspede. Para acomodar um número infinito de novos hóspedes, ele sugeriu mover o hóspede do quarto $n$ para o quarto $2n$, o que libera todos os quartos de número ímpar para os novos hóspedes.
+
+Nossa história estende essa ideia para duas dimensões, criando um hotel com um número infinito de andares e infinitos quartos em cada andar. Isso faz com que o problema pareça ainda mais impossível! Como um único elevador poderia visitar cada quarto, um por um?
+
+A solução de Anne, usando a função de pareamento de Cantor, nos mostra algo incrível sobre o infinito. Intuitivamente, parece que um hotel com um número infinito de andares e um número infinito de quartos por andar ($\mathbb{N}\times\mathbb{N}$) seria muito, muito maior do que uma única lista infinita de números ($\mathbb{N}$) que representa a posição do elevador de carga em seu trilho infinito para visitar os quartos. Mas a função de Cantor mostra uma bijeção -- uma correspondência um-para-um -- entre esses dois conjuntos, provando que eles têm o mesmo tamanho.
+
+O matemático Georg Cantor provou que esses dois infinitos são, na verdade, do mesmo tamanho. Ele chamou essa ``tamanho'' de cardinalidade, e a do infinito contável (como os números naturais) é chamada de Aleph-zero ($\aleph_0$). A função que Anne usou faz a mágica: ela pega um par de números (como o número do quarto e do andar, $(i,j)$) e o transforma em um único número (a posição do elevador, $n$). 
+$$n=(i+j)(i+j+1)/2+j$$
+O que é ainda mais incrível é que ela pode ser revertida para encontrar o par original. O mapeamento usado por Anne é mostrado na figura abaixo:
+
+\begin{center}
+\input{elevator.pt.tex}
+\end{center}
+
+%Essa correspondência de um-para-um significa que o conjunto de todos os pares de quartos e andares é, de fato, do mesmo ``tamanho'' que o conjunto de todos os números naturais. É um conceito um pouco difícil de engolir, mas é um dos grandes segredos do infinito!
+
+Essa correspondência um-para-um significa que o conjunto de todos os pares de quartos e andares é, na verdade, do mesmo ``tamanho'' que o conjunto de todos os números naturais. Isso desafia uma de nossas intuições mais básicas. Como o matemático David Hilbert apontou, ao lidar com conjuntos finitos, uma parte é sempre menor do que o todo. Mas, ao lidar com conjuntos infinitos, esse princípio não se aplica mais. Como ele disse: ``Hier gilt nun schon der Satz: ,,Der Teil ist kleiner als das Ganze'' nicht mehr.'' (Hilbert, 1925 em sua palestra ``\"{U}ber das Unendliche''). É um conceito um pouco difícil de assimilar, mas é um dos grandes segredos do infinito!

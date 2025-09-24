@@ -1,0 +1,18 @@
+The paradox that Henrietta and Bernard tried to solve is an idea from the famous mathematician David Hilbert. He proposed a thought experiment: how can an infinite hotel, with every room occupied, accommodate a new guest? His solution was simple: move the guest in room $n$ to room $n+1$, which frees up room 1 for the new guest. To accommodate an infinite number of new guests, he suggested moving the guest in room $n$ to room $2n$, which frees up all the odd-numbered rooms for the new guests.
+
+Our story extends this idea to two dimensions, creating a hotel with an infinite number of floors and infinite rooms on each floor. This makes the problem seem even more impossible! How could a single elevator visit every room, one by one?
+
+Anne's solution, using the Cantor's Pairing Function, shows us something amazing about infinity. Intuitively, it seems like a hotel with an infinite number of floors and an infinite number of rooms per floor ($\mathbb{N}\times\mathbb{N}$) would be much, much bigger than just a single infinite list of numbers ($\mathbb{N}$) that represents the freight elevator's position on its infinite track to visit the rooms. But the Cantor function shows a bijection--a one-to-one correspondence--between these two sets, proving that they are the same size.
+
+The mathematician Georg Cantor proved that these two infinities are actually the same size. He called this ``size'' cardinality, and the cardinality of a countably infinite set (like the natural numbers) is called Aleph-zero ($\aleph_0$). The function Anne used performs the magic: it takes a pair of numbers (like the room and floor number, $(i,j$)) and turns it into a single unique number (the elevator's position, n). 
+$$n=(i+j)(i+j+1)/2+j$$
+What's even more incredible is that it can be reversed to find the original pair.
+The mapping used by Anne is shown in the picture below:
+
+\begin{center}
+\input{elevator.en.tex}
+\end{center}
+
+%This one-to-one correspondence means that the set of all pairs of rooms and floors is, in fact, the same ``size'' as the set of all natural numbers. It's a concept that's a little hard to wrap your head around, but it's one of the great secrets of infinity!
+
+This one-to-one correspondence means that the set of all pairs of rooms and floors is, in fact, the same ``size'' as the set of all natural numbers. This challenges one of our most basic intuitions. As the mathematician David Hilbert pointed out, when dealing with finite sets, a part is always smaller than the whole. But when we are dealing with infinite sets, this principle no longer applies. As he said: ``Hier gilt nun schon der Satz: ,,Der Teil ist kleiner als das Ganze'' nicht mehr.'' (Hilbert, 1925 in lecture ``\"{U}ber das Unendliche''). It's a concept that's a little hard to wrap your head around, but it's one of the great secrets of infinity!

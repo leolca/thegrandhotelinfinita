@@ -1,0 +1,188 @@
+\documentclass[twoside,openany]{book} % Use 'book' for double-sided printing
+\usepackage[portuguese]{babel}
+
+% Define trim size and bleed
+\newlength{\trimwidth}
+\newlength{\trimheight}
+\setlength{\trimwidth}{6.69in}
+\setlength{\trimheight}{9.61in}
+\newlength{\bleed}
+\setlength{\bleed}{0.125in}
+\newlength{\textmargin}
+\setlength{\textmargin}{0.5in}
+\newlength{\topbottommargin}
+\setlength{\topbottommargin}{1in}
+\newlength{\innermargin}
+\setlength{\innermargin}{0.75in}
+
+% Calculate total paper dimensions
+\newlength{\mypaperwidth}
+\newlength{\mypaperheight}
+\setlength{\mypaperwidth}{\trimwidth} % Base width
+\addtolength{\mypaperwidth}{\bleed}   % Add outer bleed
+\setlength{\mypaperheight}{\trimheight}
+\addtolength{\mypaperheight}{2\bleed} % Add top and bottom bleeds
+\usepackage[paperwidth=\mypaperwidth,paperheight=\mypaperheight]{geometry} % Temporary base paper size for compilation
+
+% Set up geometry with asymmetric margins for odd/even pages
+\geometry{
+  left=\textmargin,
+  right=\textmargin,
+  inner=\innermargin,
+  top=\topbottommargin,
+  bottom=\topbottommargin,
+}
+
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, decorations.pathmorphing}
+
+\usepackage{pdfpages}
+\usepackage{fancyhdr} % For custom headers/footers (often used in books)
+\usepackage{graphicx}
+\usepackage{eso-pic}
+
+% --- Custom Header/Footer Setup (Example using fancyhdr) ---
+% You might already have this set up in your book's class or style file
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\fancyhead[LE,RO]{\thepage} % Page number on left even, right odd
+%\fancyhead[LO]{\rightmark} % Chapter title on left odd
+%\fancyhead[RE]{\leftmark}  % Section title on right even (if using sections)
+%\fancyfoot[C]{\textit{Your Author Name}} % Author in the center footer
+
+\renewcommand{\headrulewidth}{0pt} % NO line under header
+\renewcommand{\footrulewidth}{0pt} % NO line above footer
+% -----------------------------------------------------------
+
+
+\usepackage{fontspec}
+%\setmainfont{Comic Sans MS}
+%\setmainfont{Comic Neue}
+\setmainfont{Patrick Hand}
+%\setmainfont[Ligatures=TeX]{Segoe Print}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+% Define custom page number style
+\fancypagestyle{fancy}{
+  \fancyhf{} % clear all headers/footers
+  \fancyfoot[C]{%
+    \tikz[baseline=(n.base)]{
+      \node[circle, fill=black, text=white, inner sep=5pt] (n) {\thepage};
+    }%
+  }
+  \renewcommand{\headrulewidth}{0pt} % remove header line
+  \renewcommand{\footrulewidth}{0pt} % remove footer line
+}
+
+\title{O Grande Hotel Infinita}
+\author{Leonardo Araújo}
+\date{} 
+
+\begin{document}
+\pagenumbering{gobble}
+\thispagestyle{empty}
+\includepdf[pages=-]{cover.pt.pdf}
+
+\clearpage
+\thispagestyle{empty} % No page number on this page
+\mbox{} 
+\clearpage
+
+%\frontmatter
+\pagenumbering{arabic} % start numbering from here
+\setcounter{page}{1}
+\maketitle
+\thispagestyle{empty}
+
+\input{copyright.pt.tex}
+
+\Large
+\tableofcontents % Table of contents
+
+\clearpage
+\thispagestyle{fancy}
+\includepdf[pages={1},
+            pagecommand={\thispagestyle{fancy}}, % Apply your custom 'fancy' style
+            fitpaper=true,
+            noautoscale
+           ]{infinity.pdf}
+\clearpage 
+\chapter*{Prefácio} % -- Embrace the journey of knowledge}
+\input{preface.pt.tex}
+
+%\mainmatter
+
+%\cleardoublepage 
+\clearpage
+\includepdf[pages={1},
+            pagecommand={\thispagestyle{fancy}}, % Apply your custom 'fancy' style
+            fitpaper=true,
+            noautoscale
+           ]{lobby.pdf}
+\clearpage
+\chapter{O Paradoxo e o Desaparecimento}
+\input{paradox.pt.tex}
+
+\clearpage
+\includepdf[pages={1},
+            pagecommand={\thispagestyle{fancy}}, % Apply your custom 'fancy' style
+            fitpaper=true,
+            noautoscale
+           ]{owl.pdf}
+\clearpage
+\chapter{O Mistério}
+\input{mystery.pt.tex}
+
+\clearpage
+\includepdf[pages={1},
+            pagecommand={\thispagestyle{fancy}}, % Apply your custom 'fancy' style
+            fitpaper=true,
+            noautoscale
+           ]{fuss.pdf}
+\clearpage
+\chapter{As Pistas}
+\input{clues.pt.tex}
+
+\clearpage
+\includepdf[pages={1},
+            pagecommand={\thispagestyle{fancy}}, % Apply your custom 'fancy' style
+            fitpaper=true,
+            noautoscale
+           ]{running.pdf}
+\clearpage
+\chapter{O Encontro}
+\input{finding.pt.tex}
+
+\clearpage
+\includepdf[pages={1},
+            pagecommand={\thispagestyle{fancy}}, % Apply your custom 'fancy' style
+            fitpaper=true,
+            noautoscale
+           ]{spa.pdf}
+\clearpage
+\chapter*{Posfácio}
+\input{postface.pt.tex}
+
+\clearpage
+\includepdf[pages={1},
+            pagecommand={\thispagestyle{fancy}}, % Apply your custom 'fancy' style
+            fitpaper=true,
+            noautoscale
+           ]{pigfootball.pdf}
+\clearpage
+\pagenumbering{gobble}
+\thispagestyle{empty}
+\includepdf[pages=-]{backcover.pt.pdf}
+
+\end{document}
